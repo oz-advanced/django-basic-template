@@ -5,15 +5,12 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 load_dotenv(os.path.join(BASE_DIR, ".env"))
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ["*"]
-print(f"DATABASE_NAME: {os.getenv('DATABASE_NAME')}")
-print(f"DATABASE_ENGINE: {os.getenv('DATABASE_ENGINE')}")
-# Application definitiona
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -25,7 +22,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # "CoreApp.middleware.HealthCheckMiddleware",
+    "CoreApp.middleware.HealthCheckMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
