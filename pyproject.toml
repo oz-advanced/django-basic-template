@@ -11,6 +11,7 @@ django = "^5.1"
 black = "^24.8.0"
 python-dotenv = "^1.0.1"
 mysqlclient = "^2.2.4"
+django-allauth = "^64.2.0"
 
 
 [build-system]
